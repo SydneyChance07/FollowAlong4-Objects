@@ -1,30 +1,47 @@
 package part15;
 
-// Video: https://www.youtube.com/watch?v=xk4_1vDrzzo&t=10770s
-//        rewatch 2:59:30 for objects, and 2:57:15 for final
-//
-// In-class exercise — we do this together in class. Not graded, but commit it.
-// The README (In-class exercise) has the steps and the output to match.
-
 public class InClass {
     public static void main(String[] args) {
+        // Creates two speakers
+        Speaker speaker1 = new Speaker();
+        Speaker speaker2 = new Speaker();
 
-        // STEP 1b — we make two speakers and use them together, here.
+        // Raises the first speaker's volume twice
+        speaker1.louder();
+        speaker1.louder();
 
+        // Mutes the second speaker
+        speaker2.mute();
 
+        // Describes both speakers
+        speaker1.describe();
+        speaker2.describe();
 
-        // STEP 2 — fix the bugs. Each line below has ONE mistake.
-        // Move ONE line at a time above the /* line, so Java sees it.
-        // Read the error. Fix it. Run it. Then do the next line.
-        /*
-        speaker1.MAX_VOLUME = 11;
-        speaker1.lowder();
-        Speaker speaker3; speaker3.louder();
-        */
+        // Prints the maximum volume
+        System.out.println("Max volume: " + speaker1.MAX_VOLUME);
     }
 }
 
-// STEP 1a — a second class in the same file. This is allowed because it is not public.
 class Speaker {
+    // Sets the maximum volume
+    final int MAX_VOLUME = 10;
+    // Stores the brand
+    String brand = "JBL";
+    // Stores the current volume
+    int volume = 5;
 
+    // Raises the volume
+    void louder() {
+        volume++;
+    }
+
+    // Mutes the speaker
+    void mute() {
+        volume = 0;
+    }
+
+    // Prints the speaker information
+    void describe() {
+        System.out.println(brand + " speaker at volume " + volume);
+    }
 }

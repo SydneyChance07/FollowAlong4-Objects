@@ -1,15 +1,54 @@
 package part18;
 
-// Video: https://www.youtube.com/watch?v=xk4_1vDrzzo&t=13181s
-//        rewatch from about 3:39:40 for arrays of objects,
-//        and from about 3:46:10 for passing an object to a method
-// Guide: GUIDE.md in this folder, steps 2–9
-//
-// SECTION C — Stretch. Do Stretch A, then Stretch B. The README says what each one should print.
-// Stretch B2 also adds a method to your Garage class.
-//
-// There is no main method here yet. Typing it is part of the stretch.
-
 public class Stretch {
+    public static void main(String[] args) {
+        /* MY GUESS:
+        taco
+        null
+        2
+        */
 
+        // Creates an array with two food spots
+        Food[] lunch = new Food[2];
+
+        // Adds a taco to the first spot
+        lunch[0] = new Food("taco");
+
+        // Prints the food name
+        System.out.println(lunch[0].name);
+
+        // Prints the empty spot
+        System.out.println(lunch[1]);
+
+        // Prints the array size
+        System.out.println(lunch.length);
+
+        // Creates an array of fridge items
+        String[] fridge = {"milk", "eggs", "cheese"};
+
+        // Prints each fridge item
+        for (String item : fridge) {
+            System.out.println("In the fridge: " + item);
+        }
+
+        // Creates a garage and a BMW
+        Garage garage = new Garage();
+        Car bmw = new Car("BMW");
+
+        // Parks and removes the BMW
+        garage.park(bmw);
+        garage.leave(bmw);
+
+        // Creates an array of cars
+        Car[] lot = {
+                new Car("Honda"),
+                new Car("Ford"),
+                new Car("Kia")
+        };
+
+        // Parks every car in the lot
+        for (Car car : lot) {
+            garage.park(car);
+        }
+    }
 }

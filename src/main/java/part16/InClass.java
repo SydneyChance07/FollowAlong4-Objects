@@ -1,30 +1,39 @@
 package part16;
 
-// Video: https://www.youtube.com/watch?v=xk4_1vDrzzo&t=11407s
-//        rewatch 3:10:07 for constructors, and 3:19:50 for local and global variables
-//
-// In-class exercise — we do this together in class. Not graded, but commit it.
-// The README (In-class exercise) has the steps and the output to match.
-
 public class InClass {
     public static void main(String[] args) {
+        // Creates two jerseys
+        Jersey jersey1 = new Jersey("Davis", 11);
+        Jersey jersey2 = new Jersey("Brooks", 84);
 
-        // STEP 1b — we make two jerseys and use them together, here.
+        // Describes both jerseys
+        jersey1.describe();
+        jersey2.describe();
 
+        // Creates a local number
+        int number = 99;
 
-
-        // STEP 2 — fix the bugs. Each line below has ONE mistake.
-        // Move ONE line at a time above the /* line, so Java sees it.
-        // Read the error. Fix it. Run it. Then do the next line.
-        /*
-        Jersey jersey3 = new Jersey("Lee");
-        Jersey jersey4 = new Jersey(12, "Kim");
-        System.out.println(label);
-        */
+        // Prints both numbers
+        System.out.println("number in main: " + number);
+        System.out.println("number in jersey1: " + jersey1.number);
     }
 }
 
-// STEP 1a — a second class in the same file. This is allowed because it is not public.
 class Jersey {
+    // Stores the player's name
+    String name;
+    // Stores the jersey number
+    int number;
 
+    // Creates a jersey
+    Jersey(String name, int number) {
+        this.name = name;
+        this.number = number;
+    }
+
+    // Prints the jersey information
+    void describe() {
+        String label = name + " #" + number;
+        System.out.println(label);
+    }
 }
